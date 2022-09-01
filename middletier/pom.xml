@@ -19,6 +19,8 @@
         <spring.framework.version>5.3.20</spring.framework.version>
         <spring.security.version>5.6.2</spring.security.version>
         <spring.tomcat.version>4.3.30.RELEASE</spring.tomcat.version>
+        <servlet.api.version>3.0.1</servlet.api.version>
+        <tomcat.catalina.version>8.5.78</tomcat.catalina.version>
         <yes.version>1.0</yes.version>
     </properties>
 
@@ -27,6 +29,12 @@
     </modules>
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
             <dependency>
@@ -225,6 +233,19 @@
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-coyote</artifactId>
+                <version>${tomcat.catalina.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.json/json -->
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-catalina</artifactId>
+                <version>${tomcat.catalina.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-jdbc</artifactId>
                 <version>${tomcat.catalina.version}</version>
             </dependency>
         </dependencies>
