@@ -7,7 +7,6 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import org.springframework.test.context.ContextConfiguration;

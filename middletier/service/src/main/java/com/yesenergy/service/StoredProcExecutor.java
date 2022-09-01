@@ -1,24 +1,11 @@
 package com.yesenergy.service;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 public class StoredProcExecutor extends JdbcDaoSupport implements IStoredProcExecutor {
-
-    private final String url = "jdbc:postgresql://db";
-    private final String user = "postgres";
-    private final String password = "postgres";
-
-    private Connection connect() throws SQLException {
-        return DriverManager.getConnection(url, user, password);
-    }
 
     private String getParameterSQLString(Object... arguments) {
         String str = "";

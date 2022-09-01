@@ -1,13 +1,10 @@
 package com.yesenergy.service;
 
-import java.sql.Array;
 import java.sql.Clob;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 
 import org.postgresql.jdbc.PgResultSet;
