@@ -23,7 +23,7 @@ public class TestStoredProcExecutor {
 
     @Test
 	public void testSPEConnectivity() {
-        ArrayList<HashMap<String, Object>> results = new ArrayList(storedProcExecutor.fetch("initcap", "abc"));
+        ArrayList<HashMap<String, Object>> results = storedProcExecutor.fetch("initcap", "abc");
         String actual = (String)results.get(0).get("initcap");
         assertEquals("Abc", actual);
     }

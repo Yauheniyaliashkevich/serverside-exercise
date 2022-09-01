@@ -32,5 +32,7 @@
     <bean id="storedProcExecutor" class="com.yesenergy.service.StoredProcExecutor">
         <property name="dataSource" ref="dataSource" />
     </bean>
+
+    <bean id="transactionService" class="com.yesenergy.service.TransactionService"/>
     
 </beans>

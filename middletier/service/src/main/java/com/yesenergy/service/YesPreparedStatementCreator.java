@@ -20,7 +20,9 @@ public class YesPreparedStatementCreator implements PreparedStatementCreator {
     }
 
     public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
+        conn.setAutoCommit(false);
         PreparedStatement stmt = conn.prepareCall(sql);
+        stmt.setFetchSize(20);
         Integer index = 1;
 		if (args != null) {
             for (Object o : args) {

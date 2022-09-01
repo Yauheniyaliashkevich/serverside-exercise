@@ -1,5 +1,6 @@
 package com.yesenergy.service;
 
+import java.sql.Array;
 import java.sql.Clob;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+import org.postgresql.jdbc.PgResultSet;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
@@ -32,11 +34,7 @@ public class YesResultSetExtractor implements ResultSetExtractor<ArrayList<HashM
 			HashMap<String, Object> row = new HashMap<String, Object>();
 			for (String col : cols) {
 				Object val = res.getObject(col);
-				if (val instanceof Timestamp) {
-                    Timestamp val2 = (Timestamp) val;
-                    Date d = new Date(val2.getTime());
-                    //row.put(col, df.format(d));
-                } else if (val instanceof Clob) {
+				if (val instanceof Clob) {
                     Clob clobVal = (Clob) val;
     
                     String strVal;
@@ -50,12 +48,16 @@ public class YesResultSetExtractor implements ResultSetExtractor<ArrayList<HashM
                         clobVal.free();
                     }
     
+                } else if (val instanceof PgResultSet) {
+                    ArrayList<HashMap<String, Object>> subset = this.extractData((ResultSet)val);
+                    results.addAll(subset);
+                    rows += subset.size();     
                 } else {
                     row.put(col, val);
                 }
 			}
 			results.add(row);
-			rows++;
+			rows += 1;
 		}
 
 		return results;
