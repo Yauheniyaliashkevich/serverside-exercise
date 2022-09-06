@@ -8,7 +8,7 @@
     <version>1.0</version>
 
     <name>middletier</name>
-    <url>https://services.yesenergy.com</url>
+    <url>https://yesenergy.com</url>
     <packaging>pom</packaging>
 
     <properties>
@@ -26,14 +26,25 @@
 
     <modules>
         <module>service</module>
+        <module>api</module>
+        <module>web</module>
     </modules>
     <dependencyManagement>
         <dependencies>
 
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
+                <groupId>com.yesenergy.api</groupId>
+                <artifactId>api</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yesenergy.service</groupId>
+                <artifactId>service</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yesenergy.web</groupId>
+                <artifactId>web</artifactId>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
@@ -195,13 +206,6 @@
                 <version>${spring.tomcat.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.yesenergy.service</groupId>
-                <artifactId>service</artifactId>
-                <version>${yes.version}</version>
-            </dependency>
-
-
             <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -247,6 +251,13 @@
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-jdbc</artifactId>
                 <version>${tomcat.catalina.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/junit/junit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

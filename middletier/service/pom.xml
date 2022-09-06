@@ -176,4 +176,10 @@
             </plugins>
         </pluginManagement>
     </build>
+    <repositories>
+        <repository>
+            <id>yes-maven-repository</id>
+            <url>file:///${project.basedir}/../maven-repo</url>
+        </repository>
+    </repositories>
 </project>
