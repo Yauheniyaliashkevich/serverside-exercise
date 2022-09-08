@@ -37,8 +37,12 @@ public class YesJSONView extends AbstractView {
                 list.addAll(sublist);
             }
         }
-
-        objectMapper.get().writeValue(response.getOutputStream(), list);
+        ObjectMapper localMapper = objectMapper.get();
+        if (localMapper == null) {
+            localMapper = new ObjectMapper();
+            objectMapper.set(localMapper);
+        }
+        localMapper.writeValue(response.getOutputStream(), list);
     }
 
 }

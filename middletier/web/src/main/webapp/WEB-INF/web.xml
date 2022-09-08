@@ -7,9 +7,6 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <listener>
-        <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
-    </listener>
 
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
@@ -31,19 +28,19 @@
     </context-param>
 
     <servlet>
-        <servlet-name>restdispatch</servlet-name>
+        <servlet-name>apidispatch</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>
-            /WEB-INF/restdispatch.xml
+            /WEB-INF/api_dispatch.xml
 		</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>restdispatch</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
+        <servlet-name>apidispatch</servlet-name>
+        <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 </web-app>

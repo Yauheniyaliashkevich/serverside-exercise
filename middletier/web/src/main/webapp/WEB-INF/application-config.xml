@@ -52,6 +52,5 @@
     </bean>
 
     <bean id="transactionService" class="com.yesenergy.service.TransactionService"/>
-    <bean id="transactionServiceFascade" class="com.yesenergy.api.controllersTransactionServiceFacade" />
 
 </beans>

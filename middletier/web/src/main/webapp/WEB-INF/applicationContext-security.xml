@@ -2,10 +2,7 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-5.6.xsd">
-    <beans:bean id="httpFirewall" class="org.springframework.security.web.firewall.DefaultHttpFirewall" />
 
-    <http-firewall ref="httpFirewall" />
-    
     <http auto-config='true' use-expressions="false">
         <intercept-url pattern="/**" access="ROLE_ANONYMOUS" />
         <csrf disabled="true" />
@@ -14,4 +11,13 @@
             <cache-control disabled="true" />
         </headers>
     </http>
+
+
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="username" password="password" authorities="ROLE_USER" />
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
 </beans:beans>
