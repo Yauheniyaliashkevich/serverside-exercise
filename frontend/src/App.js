@@ -22,7 +22,7 @@ function App() {
 	useEffect(() => {
 		async function fetchData() {
 			setLoading(true);
-			const trans = await fetch('/api/ftr/transactions');
+			const trans = await fetch('/PS/api/ftr/transactions');
 			const json = await trans.json();
 			setData(json);
 			setLoading(false);

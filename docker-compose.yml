@@ -9,23 +9,20 @@ services:
       - POSTGRES_DB=db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  mt_build:
+  middletier:
     image: maven:3.8.6-jdk-11
-    command: sleep 5s;
+    command: /bin/bash -c "cd ./middletier && mvn clean && mvn install && mvn -pl=./web tomee:run"
     volumes:
       - "$PWD/middletier:/middletier"
-  # middletier:
-  #   build: ./middletier
-  #   ports:
-  #     - "8000:8000"
-  #   depends_on:
-  #     - db
-  # frontend:
-  #   image: node:16
-  #   command: bash -c "cd /frontend/frontend && yarn && yarn start"
-  #   volumes: 
-  #     - .:/frontend
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - db
+  frontend:
+    image: node:16
+    command: bash -c "cd /frontend && yarn && yarn start"
+    volumes: 
+      - "$PWD/frontend:/frontend"
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - DANGEROUSLY_DISABLE_HOST_CHECK=true
