@@ -6,7 +6,6 @@ import static org.mockito.Mockito.when;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 import org.json.JSONArray;
 import org.junit.Before;
@@ -26,7 +25,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.ModelMap;
 
-import com.yesenergy.api.controllers.ITransactionServiceFacade;
 import com.yesenergy.api.controllers.TransactionServiceFacade;
 import com.yesenergy.api.view.YesJSONView;
 import com.yesenergy.service.ITransactionService;

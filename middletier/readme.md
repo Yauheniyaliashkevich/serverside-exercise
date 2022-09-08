@@ -9,7 +9,11 @@ It is fomulated specifically for Visual Studio Code
 3. Run the command Remote - Containers Rebuild and Reopen in Container
 
 ## Running
-Run the task `run`. This will clean, install and run the tomee application with the code.s
+Run the task `run`. This will clean, install and run the tomee application with the code. Simply update the files and the task will rebuild the application and server.
 
 ## Debugging
-Run the task `debug` and launch the configuration `Debug (Attach) - Remote`
+Run the task `debug` the task will wait for you to connect by launching the configuration `Debug (Attach) - Remote`. Simply update the files and the task will rebuild the application and server, you will need to reconnect the `Debug (Attach) - Remote` run.
+
+## Running Tests
+1. Click on the test tube
+2. Click on any test's play button

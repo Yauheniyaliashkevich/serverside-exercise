@@ -6,14 +6,14 @@
         {
             "label": "run",
             "type": "shell",
-            "command": "mvn clean && mvn install && mvn -pl=./web tomee:run",
+            "command": "./scripts/watchTomee.sh run",
             "group": "build"
         },
         {
             "label": "debug",
             "type": "shell",
-            "command": "mvn clean && mvn install && mvn -pl=./web tomee:debug",
-            "group": "test"
+            "command": "./scripts/watchTomee.sh debug",
+            "group": "build"
         }
     ]
 }
