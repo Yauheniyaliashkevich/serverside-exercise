@@ -16,7 +16,7 @@ This long wait should only happen the first time you run.
 
 ## Using the application
 
-Navigate to http://localhost:3000.  This is a simple React application that makes a fetch request to the Django middle tier.  The Spring middle tier issues SQL to the Postgres data base which contains a small subset of public energy market data.
+Navigate to http://localhost:3000.  This is a simple React application that makes a fetch request to the Spring middle tier.  The Spring middle tier issues SQL to the Postgres data base which contains a small subset of public energy market data.
 
 ## Making changes
 
