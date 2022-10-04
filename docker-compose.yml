@@ -13,17 +13,6 @@ services:
     build:
       context: ./middletier/.devcontainer
       dockerfile: Dockerfile
-      args:
-        # Update 'VARIANT' to pick an version of Java: 11, 17.
-        # Append -bullseye or -buster to pin to an OS version.
-        # Use -bullseye variants on local arm64/Apple Silicon.
-        VARIANT: "11"
-        # Options
-        INSTALL_MAVEN: "true"
-        MAVEN_VERSION: ""
-        INSTALL_GRADLE: "false"
-        GRADLE_VERSION: ""
-        NODE_VERSION: "none"
     command: /bin/bash -c "cd ./middletier;./scripts/watchTomee.sh run"
     volumes:
       - "$PWD/middletier:/middletier"

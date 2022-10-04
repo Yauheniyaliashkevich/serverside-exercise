@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.0/containers/java-postgres
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/java-postgres
 {
 	"name": "Java & PostgreSQL",
 	"dockerComposeFile": "docker-compose.yml",
@@ -19,7 +19,7 @@
 				"vscjava.vscode-java-pack"
 			]
 		}
-	}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// This can be used to network with other containers or with the host.

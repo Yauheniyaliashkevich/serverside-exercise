@@ -7,6 +7,7 @@ It is fomulated specifically for Visual Studio Code
 1. Open the middletier directory within vscode
 2. Install the Remote - Containers extension from microsoft
 3. Run the command Remote - Containers Rebuild and Reopen in Container
+To verify open your favorite browser to http://localhost:8080/PS/api/ftr/transactions
 
 ## Running
 Run the task `run`. This will clean, install and run the tomee application with the code. Simply update the files and the task will rebuild the application and server.
