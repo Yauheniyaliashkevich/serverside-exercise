@@ -29,7 +29,7 @@ services:
     image: postgres:13.1
     restart: unless-stopped
     volumes:
-      - "$PWD/../db/onDBOpen:/docker-entrypoint-initdb.d"
+      - "../db/onDBOpen:/docker-entrypoint-initdb.d"
     environment:
       # NOTE: POSTGRES_DB/USER/PASSWORD should match values in app container
       POSTGRES_PASSWORD: postgres
