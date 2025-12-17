@@ -1,0 +1,23 @@
+{
+  "name": "serverside-exercise",
+  "version": "1.0.0",
+  "description": "This is a fully self-contained exercise which has a React based front end, a Java Spring based middle tier, and a Postgres backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/yesenergy/serverside-exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/yesenergy/serverside-exercise/issues"
+  },
+  "homepage": "https://bitbucket.org/yesenergy/serverside-exercise#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
+}
